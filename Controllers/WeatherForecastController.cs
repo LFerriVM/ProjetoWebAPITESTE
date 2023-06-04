@@ -52,16 +52,14 @@ public class WeatherForecastController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<teste> banco(){
+    public IEnumerable<Usuario> banco(){
         var usuarios = _db.Usuarios.AsNoTracking().ToArray();
-        return(puxar);
+        return(usuarios);
     }
 
     [HttpPost]
     public void banco(Usuario usuario){
-        var novoUsuario = new Usuario();
-        novoUsuario.Nome = Usuario.Nome;
-        _db.Usuario.Add(novoUsuario);
+        _db.Usuarios.Add(usuario);
         _db.SaveChanges();
     }
 }
