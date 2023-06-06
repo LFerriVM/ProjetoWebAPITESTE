@@ -22,6 +22,7 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
 }
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:7912"));
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
